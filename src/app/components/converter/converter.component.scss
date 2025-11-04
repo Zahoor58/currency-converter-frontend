@@ -1,0 +1,22 @@
+.converter-card {
+  margin: 12px;
+  padding: 12px;
+}
+
+.row {
+  margin-bottom: 12px;
+  .full {
+    width: 100%;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.result {
+  margin-top: 12px;
+  font-size: 14px;
+}

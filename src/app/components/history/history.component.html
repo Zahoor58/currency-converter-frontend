@@ -1,0 +1,23 @@
+<mat-card class="history-card" *ngIf="history.length > 0; else noHistory">
+  <mat-card-title>Conversion History</mat-card-title>
+  <mat-list>
+    <mat-list-item *ngFor="let h of history">
+      <div>
+        <div><strong>{{h.amount}} {{h.from}} → {{h.to}}</strong></div>
+        <div>Result: {{h.result | number:'1.2-6'}} (rate: {{h.rate}}) — used: {{h.usedDate}}</div>
+        <div class="muted">at {{h.timestamp | date:'short'}}</div>
+      </div>
+    </mat-list-item>
+  </mat-list>
+
+  <div class="actions">
+    <button mat-button color="warn" (click)="clearHistory()">Clear History</button>
+  </div>
+</mat-card>
+
+<ng-template #noHistory>
+  <mat-card class="history-card">
+    <mat-card-title>No conversions yet</mat-card-title>
+    <p>Make a conversion and it will appear here.</p>
+  </mat-card>
+</ng-template>

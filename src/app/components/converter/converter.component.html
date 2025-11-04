@@ -1,0 +1,48 @@
+<mat-card class="converter-card">
+  <form [formGroup]="form" (ngSubmit)="convert()">
+    <div class="row">
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>From</mat-label>
+        <mat-select formControlName="from">
+          <mat-option *ngFor="let c of currencies" [value]="c">{{ c }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>To</mat-label>
+        <mat-select formControlName="to">
+          <mat-option *ngFor="let c of currencies" [value]="c">{{ c }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" formControlName="amount" />
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>Select Date (optional)</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date" [max]="today" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+
+    <div class="row actions">
+      <button mat-raised-button color="primary" type="submit" [disabled]="loading">Convert</button>
+      <mat-progress-spinner *ngIf="loading" mode="indeterminate" diameter="24"></mat-progress-spinner>
+    </div>
+
+    <div class="result" *ngIf="result !== null">
+      <p><strong>Result:</strong> {{ result | number:'1.2-6' }} (rate: {{ rate }})</p>
+    </div>
+  </form>
+</mat-card>
+
+<!-- show history list component -->
+<app-history ></app-history>

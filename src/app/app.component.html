@@ -1,0 +1,11 @@
+<!-- src/app/app.component.html -->
+<mat-toolbar color="primary">
+  <span>{{ title }}</span>
+  <span class="spacer"></span>
+  <button mat-button routerLink="/converter" routerLinkActive="active">Converter</button>
+  <button mat-button routerLink="/history" routerLinkActive="active">History</button>
+</mat-toolbar>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

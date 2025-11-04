@@ -1,0 +1,81 @@
+/* Container Card */
+.history-card {
+  margin: 16px;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+}
+
+/* Card title */
+mat-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Each history entry */
+mat-list-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  height: auto;
+
+  &:last-child {
+    border-bottom: none;
+    height: auto;
+  }
+
+  div {
+    line-height: 1.4;
+  }
+
+  strong {
+    color: #2c3e50;
+    font-weight: 600;
+  }
+
+  .muted {
+    font-size: 12px;
+    color: #777;
+  }
+}
+
+/* Actions area */
+.actions {
+  display: flex;
+  margin-top: 12px;
+
+  button {
+    font-size: 13px;
+  }
+}
+
+/* No history message */
+mat-card p {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+.mat-mdc-list-item{
+  height: auto !important;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .history-card {
+    margin: 8px;
+    padding: 10px;
+  }
+
+  mat-card-title {
+    font-size: 1rem;
+  }
+
+  mat-list-item {
+    font-size: 13px;
+    height: auto;
+  }
+
+}
