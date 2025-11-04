@@ -1,4 +1,4 @@
 export const environment = {
-  production: false,
-  backendUrl: 'http://localhost:4000' // update to deployed backend in production
+  production: true,
+  backendUrl: 'https://currency-converter-backend-murex.vercel.app' // update to deployed backend in production
 };
